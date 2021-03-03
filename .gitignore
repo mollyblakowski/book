@@ -1,0 +1,8 @@
+*.jpg
+*.png
+*.docx
+*.pptx
+*.pdf
+*Rhistory
+/.Rproj.user/
+.Rproj.user
