@@ -1,0 +1,99 @@
+# Cleaning raw data with tidyverse
+
+Elemental and \(\epsilon\)^205^Tl data were shared with me in Excel workbooks that required some cleaning. At first, I edited the sheets manually and recorded all changes in a README file, but that didn't seem like the best practice moving forward. Thankfully, [my partner](https://scholar.google.com/citations?user=ATH-XT0AAAAJ&hl=en) is a wonderful programmar and was kind enough to help make these changes programmatically. Here are the packages we used to clean the data:
+
+```{r load-packages, eval = FALSE, echo = TRUE, warning = FALSE}
+
+# load packages
+
+library(readxl)
+library(mgsub)
+library(lubridate)
+library(devtools)
+library(dplyr)
+library(matrixStats)
+
+```
+
+With the appropriate packages ready to go, I loaded in the data from two different workbooks.
+
+```{r load-data, eval = FALSE, echo = TRUE, warning = FALSE}
+
+# load data
+
+setwd("/Users/mollyblakowski/Documents/professional/PhD/research/book")
+
+iso <- read_excel("GSLdust2019_isotopes.xlsx", sheet=3)
+el <- read_excel("GSLdust2019_elements.xlsx", sheet=1)
+
+```
+
+Originally, the \(\epsilon\)^205^Tl data was split into multiple run columns because my collaborator ran the MC-ICP-MS on a few different days, with multiple runs per sample for quality assurance. I didn't need all of the columns and rows on this original spreadsheet. I also needed to make sure that the column names were readable (e.g., no merged columns) and specify that the data are numeric rather than characters. My collaborator had calculated 2SD in Excel, but I wanted to do this programmatically as well, so I used matrixStats to get means and SDs from the multiple runs. Last, I wanted to rename the samples and add in a column for the month of the sampling period. This wasn't exactly a piece of cake, but it works!
+
+```{r iso-clean, eval = FALSE, echo = TRUE, warning = FALSE}
+
+# clean isotope sheet
+
+iso_clean <- iso %>%
+  dplyr::select(c(1,7:24)) %>% # select needed columns
+  slice(c(-1,-35,-36)) %>% # slice out unneeded rows
+  `colnames<-`(c("sample", paste0("data",c(1:18)))) %>% # make column names readable
+  mutate(across(c(-1), as.numeric)) %>% # specify that data are numeric
+  mutate(mean = rowMeans(.[,2:18], na.rm=T), 
+         sd = matrixStats::rowSds(as.matrix(.[,2:18]), na.rm=T)) %>% # calculate means and SDs
+  mutate(sd2 = sd*2) %>% # calculate 2SD
+  mutate(date = gsub("_.*", "", sample),
+         name = gsub(".*_(.*)_.*", "\\1", sample),
+         height = gsub(".*_", "", sample)) %>% # pull out date number and name character
+  mutate(month = month(as.numeric(substr(date,1,2)), label=T, abbr=F),
+         name_short = mgsub(name, c("ANT", "SYR", "KAYS", "LAYT", "FARM"), 
+                            c("AP", "SP", "KP", "LP", "FP"))) %>% # rename samples
+  dplyr::select(name_short, month, height, mean, sd2) # select just desired columns
+
+write.csv(iso_clean, "isotopes_summary.csv", row.names = FALSE) # save a nice csv file
+
+```
+
+Processing the elemental data sheet was a little easier because there weren't multiple runs for each sample. So, as with the isotope data, I selected the columns and rows that I needed, changed the sample name format, and added a column for month. I also converted all elements to ppm instead of ppb, turned OR (out of range) data into NA, and adjusted <0.000 to 0. Last, I removed some extra information from the column names, i.e., whether or not He gas was used for the measurements.
+
+```{r el-clean, eval = FALSE, echo = TRUE, warning = FALSE}
+
+# clean element sheet
+
+el_clean <- el %>%
+  dplyr::select(c(2:(dim(el)[2]-2))) %>% # select needed columns
+  mutate(across(c(-1), function(.)mgsub(., c("OR", "<0.000"), c("NA", "0")))) %>%
+  mutate(across(c(-1), as.numeric)) %>%
+  mutate(across(c(-1), function(.)./1000)) %>%
+  mutate(sample = ...2) %>%
+  slice(c(8:40)) %>% # getting rid of unwanted rows
+  mutate(date = gsub("_.*", "", sample),
+         name = gsub(".*_(.*)_.*", "\\1", sample),
+         height = gsub(".*_", "", sample)) %>% # pull out date number and name character
+  mutate(month = month(as.numeric(substr(date,1,2)), label=T, abbr=F),
+         name_short = mgsub(name, c("ANT", "SYR", "KAYS", "LAYT", "FARM"), c("AP", "SP", "KP", "LP", "FP"))) %>%
+  `colnames<-`(gsub(" \\[ .* \\]","",colnames(.))) # get rid of [ No gas ] and [ He ]
+
+write.csv(el_clean, "elements_summary.csv", row.names = FALSE) # save a nice, clean csv file
+
+```
+
+Last, I pulled just the Tl concentrations from the elemental data sheet and made a new sheet combining them with the \(\epsilon\)^205^Tl data. I created an additional column called combined_names because I wanted to plot the three sites that are periodically flooded with water from the Jordan river in one group to compare with samples from the other two sites that do not experience flooding.
+
+```{r merged-sheet, eval = FALSE, echo = TRUE, warning = FALSE}
+
+# subset to plot Tl
+
+tl_subset <- el_clean %>% 
+  dplyr::select(name_short, month, height, `205  Tl `) # pull just Tl data
+
+write.csv(tl_subset, "elements_Tl.csv", row.names = FALSE) # make Tl concentrations sheet
+
+iso_el <- left_join(iso_clean, tl_subset, by=c("name_short", "month", "height")) %>%  # combine tl_subset w/ iso_clean
+  mutate(Tl_inv = 1/`205  Tl `) %>% # but with inverted Tl concentrations
+  mutate(combined_names = ifelse(name_short %in% c("LP", "KP", "FP"), "LP, KP, and FP", name_short)) # combine flooded sites
+
+write.csv(iso_el, "merged_data.csv", row.names = FALSE)
+
+
+```

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Contemporary sources of pollution to a growing dust source</title>
+  <title>Investigating industrial sources of heavy metal pollution to the GSL playa</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Contemporary sources of pollution to a growing dust source" />
+  <meta property="og:title" content="Investigating industrial sources of heavy metal pollution to the GSL playa" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Contemporary sources of pollution to a growing dust source" />
+  <meta name="twitter:title" content="Investigating industrial sources of heavy metal pollution to the GSL playa" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Molly Blakowski" />
 
 
-<meta name="date" content="2021-03-07" />
+<meta name="date" content="2021-04-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 
-<link rel="next" href="database.html"/>
+<link rel="next" href="cleaning-raw-data-with-tidyverse.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,68 +52,6 @@
 
 
 
-<style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -128,12 +66,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">WILD 6900 Final Project</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Project summary</a></li>
-<li class="chapter" data-level="2" data-path="database.html"><a href="database.html"><i class="fa fa-check"></i><b>2</b> Database</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#project-goals"><i class="fa fa-check"></i><b>1.1</b> Project goals</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#project-outline"><i class="fa fa-check"></i><b>1.2</b> Project outline</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#project-background"><i class="fa fa-check"></i><b>1.3</b> Project background</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cleaning-raw-data-with-tidyverse.html"><a href="cleaning-raw-data-with-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Cleaning raw data with tidyverse</a></li>
+<li class="chapter" data-level="3" data-path="plotting-data-with-ggplot.html"><a href="plotting-data-with-ggplot.html"><i class="fa fa-check"></i><b>3</b> Plotting data with ggplot</a></li>
+<li class="chapter" data-level="4" data-path="creating-a-database-in-sqlite.html"><a href="creating-a-database-in-sqlite.html"><i class="fa fa-check"></i><b>4</b> Creating a database in SQLite</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -146,7 +89,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Contemporary sources of pollution to a growing dust source</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Investigating industrial sources of heavy metal pollution to the GSL playa</a>
           </h1>
         </div>
 
@@ -155,14 +98,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Contemporary sources of pollution to a growing dust source</h1>
+<h1 class="title">Investigating industrial sources of heavy metal pollution to the GSL playa</h1>
 <p class="author"><em>Molly Blakowski</em></p>
-<p class="date"><em>2021-03-07</em></p>
+<p class="date"><em>2021-04-27</em></p>
 </div>
-<div id="project-summary" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Project summary</h1>
-<p>Include summary of project here. I will also include pictures of industrial wastewater, dust plumes from mine tailings, and the Kennecott smelter stack.</p>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<p>This project is related to the first chapter of my dissertation, for which I am attempting to use a novel geochemical tracer - Thallium stable isotopes - to apportion the sources of heavy metals to the dry lakebed (playa) of the Great Salt Lake.</p>
+<div id="project-goals" class="section level2">
+<h2><span class="header-section-number">1.1</span> Project goals</h2>
+<p>The goals of my WILD 6900 project are to:</p>
+<ol style="list-style-type: decimal">
+<li>Clean data received from my collaborator who conducted the first round of geochemical analayses</li>
+<li>Plot my data to quickly share with my collaborators and plan our next steps</li>
+<li>Create a database that can facilitate quick comparison of multiple data tpes from this study and other Tl isotope studies</li>
+</ol>
+</div>
+<div id="project-outline" class="section level2">
+<h2><span class="header-section-number">1.2</span> Project outline</h2>
+<p>This book is composed of the following chapters:</p>
+<ul>
+<li>Chapter 1: <a href="index.html#introduction">Introduction</a></li>
+<li>Chapter 2: <a href="cleaning-raw-data-with-tidyverse.html#cleaning-raw-data-with-tidyverse">Cleaning raw data with tidyverse</a></li>
+<li>Chapter 3: <a href="plotting-data-with-ggplot.html#plotting-data-with-ggplot">Plotting data with ggplot</a></li>
+<li>Chapter 4: <a href="creating-a-database-in-sqlite.html#creating-a-database-in-sqlite">Creating a database in SQLite</a></li>
+</ul>
+</div>
+<div id="project-background" class="section level2">
+<h2><span class="header-section-number">1.3</span> Project background</h2>
+<p>The Great Salt Lake (GSL) is the largest saline lake in the Western Hemisphere and the eighth largest inland body of saltwater in the world. In 2019, the economic value of the GSL from mineral extraction, commercial brine shrimp harvest, and recreation was estimated at $1.5 billion US dollars (Bioeconomics, 2012). The GSL also provides food and shelter to millions of migratory birds flying between North and South America on the Pacific and Central Flyways. Over the years, a series of droughts and wet cycles have led to major fluctuations in lake level. These fluctuations have made it harder to detect anthropogenic impacts to the lake (Null &amp; Wurtsbaugh, 2020; Wurtsbaugh et al., 2017). However, recent research revealed that there have been no significant long-term changes in precipitation or streamflow from the GSL tributaries since the first white settlers arrived in 1847 (Wurtsbaugh et al., 2017). What has changed is water use: humans have reduced flows into the lake by about 39%, lowering the lake by 3.4 m and reducing lake area by 50% (Wurtsbaugh et al., 2017). The decline of the GSL has exposed a huge supply of fine-grained sediments to erosion and entrainment in the atmosphere (Perry et al., 2019; Wurtsbaugh et al., 2017). Dr. Kevin Perry’s recent GSL dust plume investigation study revealed that surface sediments across the GSL playa are contaminated by anthropogenic heavy metals (Perry et al., 2019). Due to its proximity to urban and industrial centers, the playa near Farmington Bay (FB), which is the bay that occupies the southeastern portion of the lake, exhibits particularly high concentrations of heavy metals, such as Cd, Pb, and Zn (Perry et al., 2019). Identifying the sources of heavy metal pollution to this growing dust source will provide valuable data for policymakers to formulate strategies for dust and pollution mitigation.</p>
+<div class="figure" style="text-align: left"><span id="fig:dust-fig"></span>
+<img src="duststorm.jpeg" alt="Photo of a dust storm on the GSL playa." width="80%" />
+<p class="caption">
+Figure 1.1: Photo of a dust storm on the GSL playa.
+</p>
+</div>
+<p>The GSL is a terminal lake that accumulates pollution from mining, smelting, mineral extraction, weapons testing, agriculture, and municipal and industrial wastewater across its entire watershed. Thus, although there are many “suspects” to consider in this investigation, mining and smelting are likely the most prominent sources of atmospheric pollution near the GSL. The neighboring Oquirrh and Wasatch Mountains have been mined for Ag, Au, Cu, and Pb since the late 1800s and early 1900s. Moreover, the smelter and tailings impoundment for the Kennecott Copper Mine, one of the largest open-pit mines in the world, are located on the southern shore of the GSL, directly upwind from FB. Dust plumes are frequently observed originating from the Kennecott tailings, as well as other waste piles in the Bingham Mining District. As a result, the southeastern portion of the playa is enriched in a suite of heavy metals, often with gradually lower concentrations moving farther away from Kennecott (Perry et al., 2019). However, a large portion of the playa is periodically flooded with water from polluted waterways, representing another potentially significant source of heavy metal pollution. Effluent from nine wastewater treatment plants flows from the Jordan River through Salt Lake City to FB and the surrounding wetlands (Kelso &amp; Baker, 2020). This area also receives wastewater from industrial drainage canals, including the Goggin Drain and the Sewage Canal, the latter of which is a former EPA Superfund Site that was never fully remediated (Waddell et al., 2009; Wurtsbaugh et al., 2012). Utah Lake, which drains into the GSL via the Jordan River, as well as the river itself are also polluted by runoff from Provo, Salt Lake City, and smaller cities in between.</p>
+<p>I will attempt to attribute heavy metals in GSL playa dust to mine waste, smelting, and riverine sources through receptor modeling and isotope fingerprinting. Recent advances in mass spectrometry have made it possible to measure small variations in the stable isotope compositions of toxic trace metals like thallium (Tl) in environmental samples (Weiss et al., 2008), but at present, the differences in <sup>205</sup>Tl/<sup>203</sup>Tl (hereafter noted as <span class="math inline">\(\epsilon\)</span><sup>205</sup>Tl) have only been measured in a limited number of Tl pollution scenarios. Thus, further investigations using Tl isotopes as potential tracers are warranted (Kersten et al., 2014; Liu et al., 2020; Vaněk et al., 2016, 2018). The GSL is an ideal location to continue this work because mining and smelting activities are the most important sources of Tl pollution to the environment globally. Likewise, because recent studies have shown that Tl isotopes may fractionate during smelting processes (Liu et al., 2020; Vaněk et al., 2016, 2018), it may be possible to distinguish Tl delivered to the playa from mine waste piles and from smelting – a desirable capability considering that mitigating emissions from these two source types requires very different strategies. Although the degree to which isotope fingerprints like <span class="math inline">\(\epsilon\)</span>s<sup>205</sup>Tl can be used to identify the sources of multiple heavy metals to mixed samples such as dust is uncertain, recent work has shown that isotope data can improve source profile definition in positive matrix factorization (PMF) receptor models (Souto-Oliveira et al., 2021; Wang et al., 2019). Therefore, I will attempt to identify clusters of heavy metals associated with different source types that are defined by their elemental compositions and <span class="math inline">\(\epsilon\)</span><sup>205</sup>Tl. To the best of my knowledge, this work will be the first application of Tl isotopes in dust research, as well as the first attempt to quantitatively attribute heavy metal enrichments in dust produced from the GSL playa to culpable industrial sources.</p>
 
+</div>
 </div>
             </section>
 
@@ -170,7 +144,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 
-<a href="database.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="cleaning-raw-data-with-tidyverse.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -220,6 +194,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

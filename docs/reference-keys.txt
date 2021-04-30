@@ -1,3 +1,16 @@
-fig:nice-fig
 project-summary
 database
+database-1
+database-2
+chapter-1-introduction
+project-goals
+project-outline
+project-background
+introduction
+cleaning-raw-data-with-tidyverse
+creating-a-database-in-sqlite
+creating-a-database-in-sqlite-1
+fig:nice-fig
+fig:dust-fig
+plotting-data-with-ggplot
+fig:tl-fig
