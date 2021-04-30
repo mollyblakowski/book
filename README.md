@@ -1,1 +1,1 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
+Here is my project! It wasn't as much as I hoped to get done, but I have gained so much for this class and am looking forward to practicing my new skills all summer while analyzing data. Thank you, Simona!
