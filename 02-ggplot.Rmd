@@ -36,7 +36,7 @@ tl_plot
 
 ```
 
-```{r tl-fig, echo = FALSE, fig.align = "center", fig.cap = "The plot!", out.width = '80%'}
+```{r tl-fig, eval = TRUE, echo = TRUE, fig.align = "center", fig.cap = "The plot!", out.width = '40%'}
 
 # hopefully insert the plot... it's taking forever to load!
 
