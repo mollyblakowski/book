@@ -1,1 +1,1 @@
-Here is my project! It wasn't as much as I hoped to get done, but I have gained so much for this class and am looking forward to practicing my new skills all summer while analyzing data. Thank you, Simona!
+Here is my project! It wasn't as much as I hoped to get done, but I have gained so much from this class and am looking forward to practicing my new skills all summer while analyzing data. Thank you, Simona!
