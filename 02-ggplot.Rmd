@@ -40,7 +40,7 @@ tl_plot
 
 # hopefully insert the plot... it's taking forever to load!
 
-knitr::include_graphics("tl_plot.tiff2")
+knitr::include_graphics("tl_plot2.tiff")
 
 ```
 
