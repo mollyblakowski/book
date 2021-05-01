@@ -2,7 +2,7 @@
 
 In the literature, the most common way to visualize \(\epsilon\)^205^Tl is plotted against 1/Tl concentration (ppm), so this is why I made the merged sheet during my last stage of cleaning. Thanks to recent practice from class assignments, plotting the data to share with my collaborators was the easieast part.
 
-```{r making-plot, eval = FALSE, echo = TRUE, warning = FALSE}
+```{r making-plot, eval = TRUE, echo = TRUE, warning = FALSE}
 
 # load packages
 
@@ -22,15 +22,15 @@ tl_plot <- iso_el %>%
   geom_point(aes(shape = month)) +
   geom_errorbar(aes(ymin = mean - sd2, ymax = mean + sd2), width = .2)+
   theme_light() + 
-  labs(x = "1/Tl (ppm)", y = "expression(epsilon)", col = "Site", shape = "Month") +
+  labs(x = "1/Tl (ppm)", y = "Epsilon205Tl", col = "Site", shape = "Month") +
   theme(legend.position = c(0.85,0.3)) +
   xlim(0, 20) +
   ggsave(filename = "tl_plot2.tiff",
          device = "tiff",
-         width = 6,
-         height = 6,
+         width = 8,
+         height = 8,
          units = "in",
-         dpi = 200)
+         dpi = 300)
 
 tl_plot
 
